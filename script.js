@@ -105,6 +105,9 @@ function recordResult(result) {
 
 function checkScore() {
   if (winRecord === 5 || lossRecord === 5) {
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorsButton.disabled = true;
     if (winRecord === 5) {
       resultMessage.textContent =
         "Hooray! You beat the computer! Humanity is saved!";
@@ -125,6 +128,9 @@ function resetGame() {
     wins.textContent = `Wins = ${winRecord}`;
     losses.textContent = `Losses = ${lossRecord}`;
     ties.textContent = `Ties = ${tieRecord}`;
+    rockButton.disabled = false;
+    paperButton.disabled = false;
+    scissorsButton.disabled = false;
     resultMessage.textContent =
       "The fate of the world depends on you... again!";
     roundResults.removeChild(resetButton);
